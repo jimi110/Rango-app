@@ -9,23 +9,28 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="apple-mobile-web-app-title" content="Rango">
-  <meta name="description" content="Registra tu mejor serie, sube de rango en cada ejercicio y ve tu progreso del Día 1 al Día 90.">
+  <meta name="description" content="Tu entrenador de bolsillo: te dice qué entrenar cada día, registra tus series y te sube de rango en cada ejercicio.">
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="icon" href="icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="stylesheet" href="style.css">
-  <title>Rango · Sube de nivel en el gym</title>
+  <title>Rango · Tu entrenador de gimnasio</title>
 </head>
 <body>
   <main id="app">
-    <section id="v-home" class="view"></section>
+    <section id="v-today" class="view"></section>
+    <section id="v-library" class="view" hidden></section>
     <section id="v-progress" class="view" hidden></section>
     <section id="v-settings" class="view" hidden></section>
   </main>
 
   <nav class="tabs" aria-label="Navegación principal">
     <div class="tabs-in">
-      <a href="#/" data-tab="home" class="tab on" aria-label="Ejercicios">
+      <a href="#/" data-tab="today" class="tab on" aria-label="Hoy">
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11.5 12 5l8 6.5V19a1 1 0 0 1-1 1h-4.5v-5.5h-5V20H5a1 1 0 0 1-1-1z"/></svg>
+        <span>Hoy</span>
+      </a>
+      <a href="#/library" data-tab="library" class="tab" aria-label="Ejercicios">
         <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="3.5" width="7" height="7" rx="2"/><rect x="13.5" y="3.5" width="7" height="7" rx="2"/><rect x="3.5" y="13.5" width="7" height="7" rx="2"/><rect x="13.5" y="13.5" width="7" height="7" rx="2"/></svg>
         <span>Ejercicios</span>
       </a>
@@ -41,12 +46,18 @@
   </nav>
 
   <div id="sheet" class="sheet" aria-hidden="true"></div>
+  <div id="plan" class="sheet plan" aria-hidden="true"></div>
+  <div id="player" class="sheet player" aria-hidden="true"></div>
   <div id="modal" class="modal" hidden></div>
-  <div id="rest-box" class="restbox" aria-live="polite"></div>
   <div id="top-notes" class="notes" aria-live="polite"></div>
 
   <noscript><p style="padding:24px">Rango necesita JavaScript para funcionar.</p></noscript>
   <script src="exercises.js"></script>
+  <script src="guide.js"></script>
+  <script src="rig.js"></script>
+  <script src="sounds.js"></script>
+  <script src="core.js"></script>
+  <script src="workout.js"></script>
   <script src="app.js"></script>
 </body>
 </html>

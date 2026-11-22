@@ -1,6 +1,6 @@
 /* RANGO · service worker (funciona sin conexión). Sube el número de VERSION al cambiar archivos. */
-var VERSION = 'rango-v1';
-var FILES = ['./', 'index.html', 'style.css', 'exercises.js', 'app.js', 'manifest.webmanifest', 'icon.svg', 'icon-192.png', 'icon-512.png', 'apple-touch-icon.png'];
+var VERSION = 'rango-v3';
+var FILES = ['./', 'index.html', 'style.css', 'exercises.js', 'guide.js', 'rig.js', 'sounds.js', 'core.js', 'workout.js', 'app.js', 'manifest.webmanifest', 'icon.svg', 'icon-192.png', 'icon-512.png', 'apple-touch-icon.png'];
 
 self.addEventListener('install', function (e) {
   e.waitUntil(caches.open(VERSION).then(function (c) { return c.addAll(FILES); }).then(function () { return self.skipWaiting(); }));
